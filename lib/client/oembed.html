@@ -1,3 +1,7 @@
 <template name="oembed">
-    {{{html}}}
+    {{#if html}}
+        <div class="iframely-oembed">
+            {{{html}}}
+        </div>
+    {{/if}}
 </template>

@@ -10,6 +10,7 @@ Package.onUse(function(api) {
   api.versionsFrom('METEOR@0.9.2');
 
   api.use('templating');
+  api.use('http');
 
   api.addFiles('lib/client/oembed.html', 'client');
   api.addFiles('lib/client/oembed.js', 'client');
