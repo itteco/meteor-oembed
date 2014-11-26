@@ -1,11 +1,11 @@
-meteor-oembed
+iframely:oembed
 =============
 
-== Install ==
+### Install
 
     meteor add iframely:oembed
 
-== Usage ==
+### Usage
 
     {{>oembed}}
 
