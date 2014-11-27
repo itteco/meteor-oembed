@@ -45,10 +45,6 @@ Alternatively you can customize base widget overriding styles: [base-widget.css]
 
 ### Examples
 
-Here is integration diff into meteor demo application (shows embed if todo's text is url):
+Here is integration diff into meteor `todo` example application (shows embed if todo's text is url): [meteor-todo-iframely-oembed-demo](https://github.com/nleush/meteor-todo-iframely-oembed-demo/commit/1b9f52ae4fc4a25dba617de0edbdf59633ecd1e5)
 
-https://github.com/nleush/meteor-todo-iframely-oembed-demo/commit/1b9f52ae4fc4a25dba617de0edbdf59633ecd1e5
-
-And one more small demo app using embeds:
-
-https://github.com/nleush/meteor-iframely-demo
+And one more small demo app used to test package: [meteor-iframely-demo](https://github.com/nleush/meteor-iframely-demo).
