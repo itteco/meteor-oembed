@@ -11,6 +11,7 @@ Package.onUse(function(api) {
 
     api.use('templating');
     api.use('http');
+    api.use('mongo');
 
     api.addFiles('lib/client/base-widget.html', 'client');
     api.addFiles('lib/client/base-widget.js', 'client');
