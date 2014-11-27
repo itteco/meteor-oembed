@@ -1,9 +1,11 @@
-iframely:oembed
+iframely:oembed for Meteor
 =============
 
-### See demo
+This package adds embed codes support to Meteor through a oEmbed proxy API. The proxy is configurable, you can use [Iframely](https://iframely.com) (with API key), our [open-source version](https://github.com/itteco/iframely), or any other proxy. Including implementing your own. 
 
-Demo: http://iframely.meteor.com/
+Quick demo: [http://iframely.meteor.com/](http://iframely.meteor.com/)
+
+iframely:oembed can cache oEmbeds in the database. The package also lets you optionally customize the templates used for renders (especially if the URL is `link` type and only has title, description and a thumbnail).
 
 ### Install
 
@@ -21,13 +23,15 @@ Configure oembed rendering widget and oEmbed api endpoint:
 
     Meteor.startup(function() {
 
-        // Affected only on client side. If not specified - default widget used.
+        // Optional client-side template. If not specified - default widget used.
         IframelyOembed.setTemplate('customWidget');
 
-        // Affected only on server side. Default: `'http://open.iframe.ly/api/oembed'`.
+        // Please configure your oEmbed proxy address. 
+        // Default: `'http://open.iframe.ly/api/oembed'` powered by oembedapi.com
+        // Query string parameters are fine too
         IframelyOembed.setEndpoint('http://iframe.ly/api/oembed?api_key=<key>');
 
-        // Caching using mongo collection. Defaults:
+        // Optionally cache oEmbeds using mongo collection. Defaults:
         IframelyOembed.setCacheOptions({
             cacheTTL: 1000 * 60 * 60, // Hour.
             cacheErrorTTL: 1000 * 60, // Minute.
@@ -35,27 +39,31 @@ Configure oembed rendering widget and oEmbed api endpoint:
         });
     });
 
-Use base widget as example for template customization:
+See the default base widget as example and boilerplate for template customization:
 
  * [base-widget.html](https://github.com/itteco/meteor-oembed/blob/master/lib/client/base-widget.html)
  * [base-widget.js](https://github.com/itteco/meteor-oembed/blob/master/lib/client/base-widget.js)
 
-Widget context is oembed object itself. If oembed is loading then context will be:
+The context of the widget is the oEmbed JSON object itself. If oEmbed is loading, the temp context is:
 
     {
         loading: true
     }
 
-If error occurred during oembed loading context will be:
+If an error is encountered during oEmbed request (such as page 404s or proxy 503s), the context is set to:
 
     {
         error: ErrorInstance
     }
 
-Alternatively you can customize base widget overriding styles: [base-widget.css](https://github.com/itteco/meteor-oembed/blob/master/lib/client/base-widget.css)
+Alternative way to customize base widget is simply via CSS: [base-widget.css](https://github.com/itteco/meteor-oembed/blob/master/lib/client/base-widget.css)
 
-### Examples
+### Integration example
 
-Here is integration diff into meteor `todos` example application (shows embed if todo's text is url): [meteor-todo-iframely-oembed-demo](https://github.com/nleush/meteor-todo-iframely-oembed-demo/commit/1b9f52ae4fc4a25dba617de0edbdf59633ecd1e5)
+Here is the integration diff that activates iframely:oembed in the exmaple Meteor `todos` application (embeds will show up if todo's text is url): [meteor-todo-iframely-oembed-demo](https://github.com/nleush/meteor-todo-iframely-oembed-demo/commit/1b9f52ae4fc4a25dba617de0edbdf59633ecd1e5)
 
-[Deployed demo app](http://iframely.meteor.com/) used to test package: [meteor-iframely-demo](https://github.com/nleush/meteor-iframely-demo).
+And another simple [demo app](http://iframely.meteor.com/) used to test package: [meteor-iframely-demo](https://github.com/nleush/meteor-iframely-demo).
+
+### License
+
+MIT, (c) 2014 Itteco Software Corp.
