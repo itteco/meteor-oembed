@@ -1,7 +1,3 @@
 <template name="oembed">
-    {{#if html}}
-        <div class="iframely-oembed">
-            {{{html}}}
-        </div>
-    {{/if}}
+    {{> Template.dynamic template=template data=data }}
 </template>

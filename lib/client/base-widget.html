@@ -1,0 +1,20 @@
+<template name="iframelyBaseWidget">
+    {{#if html}}
+        <div class="iframely-oembed">
+            {{{html}}}
+        </div>
+    {{else}}
+        {{#if title}}
+            <div class="iframely-oembed">
+                <div class="iframely-link">
+                    <a href="{{url}}" target="_blank">
+                        {{#if thumbnail_url}}
+                            <div class="iframely-thumbnail" style="background-image: url('{{thumbnail_url}}');"></div>
+                        {{/if}}
+                        {{title}}
+                    </a>
+                </div>
+            </div>
+        {{/if}}
+    {{/if}}
+</template>

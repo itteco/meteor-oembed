@@ -12,6 +12,10 @@ Package.onUse(function(api) {
   api.use('templating');
   api.use('http');
 
+  api.addFiles('lib/client/base-widget.html', 'client');
+  api.addFiles('lib/client/base-widget.js', 'client');
+  api.addFiles('lib/client/base-widget.css', 'client');
+
   api.addFiles('lib/client/oembed.html', 'client');
   api.addFiles('lib/client/oembed.js', 'client');
 

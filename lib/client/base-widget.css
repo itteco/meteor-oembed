@@ -1,0 +1,23 @@
+.iframely-oembed {
+    margin: 5px;
+    clear: both;
+}
+
+.iframely-oembed .iframely-thumbnail {
+    float: left;
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    margin-right: 5px;
+}
+
+.iframely-oembed .iframely-link {
+    padding: 5px;
+    border: 1px solid grey;
+    height: 50px;
+    overflow: hidden;
+}
+
+.iframely-oembed img {
+    max-width: 100%;
+}
