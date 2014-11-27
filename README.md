@@ -1,6 +1,10 @@
 iframely:oembed
 =============
 
+### See demo
+
+Demo: http://iframely.meteor.com/
+
 ### Install
 
     meteor add iframely:oembed
@@ -25,7 +29,7 @@ Configure oembed rendering widget and oEmbed api endpoint:
 
         // Caching using mongo collection. Defaults:
         IframelyOembed.setCacheOptions({
-            cacheTTL: 1000 * 60 * 2, // Hour.
+            cacheTTL: 1000 * 60 * 60, // Hour.
             cacheErrorTTL: 1000 * 60, // Minute.
             cacheEnabled: true
         });
@@ -54,4 +58,4 @@ Alternatively you can customize base widget overriding styles: [base-widget.css]
 
 Here is integration diff into meteor `todos` example application (shows embed if todo's text is url): [meteor-todo-iframely-oembed-demo](https://github.com/nleush/meteor-todo-iframely-oembed-demo/commit/1b9f52ae4fc4a25dba617de0edbdf59633ecd1e5)
 
-And one more small demo app used to test package: [meteor-iframely-demo](https://github.com/nleush/meteor-iframely-demo).
+[Deployed demo app](http://iframely.meteor.com/) used to test package: [meteor-iframely-demo](https://github.com/nleush/meteor-iframely-demo).
