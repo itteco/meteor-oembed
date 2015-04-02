@@ -1,7 +1,7 @@
 Package.describe({
     name: 'iframely:oembed',
     summary: 'Easy insert oEmbed widget in template',
-    version: '0.0.1',
+    version: '0.0.2',
     git: 'https://github.com/itteco/meteor-oembed.git'
 });
 
