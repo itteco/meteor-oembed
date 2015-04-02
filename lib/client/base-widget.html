@@ -1,6 +1,6 @@
 <template name="iframelyBaseWidget">
     {{#if html}}
-        <div class="iframely-oembed">
+        <div class="iframely-oembed" data-url="{{url}}">
             {{{html}}}
         </div>
     {{else}}
